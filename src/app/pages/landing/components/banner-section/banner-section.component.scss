@@ -1,0 +1,10 @@
+.banner-container {
+  background: url(~/assets/images/banner-bg.jpg);
+  background-size: cover;
+
+  .container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+}
