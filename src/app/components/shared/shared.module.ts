@@ -1,24 +1,25 @@
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-import { MatIconModule } from '@angular/material/icon';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatToolbarModule } from '@angular/material/toolbar';
-
 import { NavbarMainComponent } from './navbar-main/navbar-main.component';
+import { MaterialModule } from 'src/app/materials/material/material.module';
 
 @NgModule({
   declarations: [NavbarMainComponent],
   imports: [
     CommonModule,
+    BrowserModule,
+    BrowserAnimationsModule,
     RouterModule,
 
-    // third-party
-    MatIconModule,
-    MatMenuModule,
-    MatToolbarModule
+    // custom
+    MaterialModule,
   ],
-  exports: [ NavbarMainComponent ]
+  exports: [
+    NavbarMainComponent,
+  ]
 })
 export class SharedModule { }

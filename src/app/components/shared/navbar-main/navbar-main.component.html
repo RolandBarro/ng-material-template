@@ -1,7 +1,6 @@
-<mat-toolbar color="primary" class="d-md-flex justify-content-between">
-  <div>NgMatApp</div>
-  <div class="example-button-row">
-    <a class="btn mr-3" [routerLink]="['/home']" routerLinkActive="router-link-active"  mat-flat-button color="primary">Home</a>
-    <a class="btn" [routerLink]="['/subscription']" routerLinkActive="router-link-active" mat-flat-button>Subscription</a>
-  </div>
-</mat-toolbar>
+<mat-toolbar color="primary" class="mat-elevation-z8">
+  <span><mat-icon>map</mat-icon> SendThru</span>
+  <div class="spacer"></div>
+  <a mat-button [routerLink]="['/home']" routerLinkActive="router-link-active">Home</a>
+  <a mat-raised-button color="accent" [routerLink]="['/subscription']" routerLinkActive="router-link-active">Subscription</a>
+ </mat-toolbar>
