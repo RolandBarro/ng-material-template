@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { interval, Observable, BehaviorSubject, pipe, Subject } from 'rxjs';
-import { map, takeUntil, takeWhile, take } from 'rxjs/operators';
+import { interval, BehaviorSubject, Subject } from 'rxjs';
+import { map, takeUntil, take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-banner-section',
@@ -25,9 +25,19 @@ export class BannerSectionComponent implements OnInit, OnDestroy {
 
   private _unsubscribe = new Subject<any>();
 
-  constructor() { }
+  constructor() {
+    this.typeEffect(this.texts[0]);
+    this.typeEffectRunner();
+  }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  ngOnDestroy() {
+    this._unsubscribe.next();
+    this._unsubscribe.complete();
+  }
+
+  typeEffectRunner() {
     const infiteInterval = interval(5000);
     const textsLength = this.texts.length;
 
@@ -39,8 +49,6 @@ export class BannerSectionComponent implements OnInit, OnDestroy {
             if (parseInt(rndm, 10) >= textsLength ) {
               rndm = (Math.random() * 10).toFixed(0);
             } else {
-              console.log(rndm);
-
               this.joinText = '';
               return this.texts[rndm];
             }
@@ -49,11 +57,6 @@ export class BannerSectionComponent implements OnInit, OnDestroy {
         takeUntil(this._unsubscribe)
       )
       .subscribe(text => this.typeEffect(text));
-  }
-
-  ngOnDestroy() {
-    this._unsubscribe.next();
-    this._unsubscribe.complete();
   }
 
   typeEffect(text: string) {
