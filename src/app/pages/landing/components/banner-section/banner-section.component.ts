@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { interval, Observable, BehaviorSubject, pipe } from 'rxjs';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { interval, Observable, BehaviorSubject, pipe, Subject } from 'rxjs';
 import { map, takeUntil, takeWhile, take } from 'rxjs/operators';
 
 @Component({
@@ -7,18 +7,23 @@ import { map, takeUntil, takeWhile, take } from 'rxjs/operators';
   templateUrl: './banner-section.component.html',
   styleUrls: ['./banner-section.component.scss']
 })
-export class BannerSectionComponent implements OnInit {
+export class BannerSectionComponent implements OnInit, OnDestroy {
 
   texts = [
     'creatively...',
     'effectively...',
     'artistically...',
     'expressively...',
+    'resourcefully...',
+    'productively...',
+    'productively...',
   ];
   joinText = '';
 
   private _textShow$ = new BehaviorSubject<string>('');
   textShow$ = this._textShow$.asObservable();
+
+  private _unsubscribe = new Subject<any>();
 
   constructor() { }
 
@@ -40,9 +45,15 @@ export class BannerSectionComponent implements OnInit {
               return this.texts[rndm];
             }
           }
-        })
+        }),
+        takeUntil(this._unsubscribe)
       )
       .subscribe(text => this.typeEffect(text));
+  }
+
+  ngOnDestroy() {
+    this._unsubscribe.next();
+    this._unsubscribe.complete();
   }
 
   typeEffect(text: string) {
@@ -56,7 +67,8 @@ export class BannerSectionComponent implements OnInit {
         map(() => {
           return splitText[index];
         }),
-        take(length)
+        take(length),
+        takeUntil(this._unsubscribe)
       )
       .subscribe(
         (result) => {
@@ -69,6 +81,7 @@ export class BannerSectionComponent implements OnInit {
       );
   }
 
+  // TODO: Add backspace effect
   backSpaceEffect(text: string) {
     console.log('test: ', text);
   }
