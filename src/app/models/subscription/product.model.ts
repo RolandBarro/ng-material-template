@@ -11,3 +11,7 @@ export interface Product {
   features: string[];
   plans: Plan[];
 }
+
+export interface ProductList {
+  products: Product[]
+}

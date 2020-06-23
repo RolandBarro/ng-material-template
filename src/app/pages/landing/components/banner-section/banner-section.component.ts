@@ -86,6 +86,6 @@ export class BannerSectionComponent implements OnInit, OnDestroy {
 
   // TODO: Add backspace effect
   backSpaceEffect(text: string) {
-    console.log('test: ', text);
+    // console.log('test: ', text);
   }
 }
