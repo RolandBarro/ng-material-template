@@ -37,6 +37,7 @@
   }
 
   .card-body {
+    padding-top: 0;
     mat-chip.feature-item {
       min-height: fit-content;
       font-size: 4vw;
@@ -157,6 +158,60 @@
 }
 
 @media (min-width: 1200px) {
+  .card {
+    .card-header .card-title .title {
+      font-size: 4vw;
+    }
 
+    .card-body {
+      height: 30vh;
+      display: flex;
+      align-items: center;
+
+      .list-container {
+        width: 100%;
+
+        mat-chip.feature-item {
+          font-size: 1vw;
+          height: 6vh;
+        }
+      }
+    }
+
+    .card-footer .footer-container {
+      .plans {
+        padding-left: 0;
+        padding-right: 0;
+
+        .plan-container {
+          padding-right: 5px;
+
+          .currency {
+            font-size: 1vw;
+          }
+
+          .price {
+            font-size: 2vw;
+            line-height: 5vh;
+            margin-left: 0;
+          }
+
+          .interval {
+            font-size: 1vw;
+            bottom: -0.7rem;
+            right: 5px;
+          }
+        }
+      }
+
+      .action-button {
+        padding-left: 1vw;
+
+        button.mat-raised-button {
+          font-size: 1.3vw;
+        }
+      }
+    }
+  }
 }
 

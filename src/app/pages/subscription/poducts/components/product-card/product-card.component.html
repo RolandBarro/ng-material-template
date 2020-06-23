@@ -6,10 +6,12 @@
     <img class="card-banner" src="assets/images/subscription/{{product.name}}.png" alt="{{product.name}}">
   </div>
   <div class="card-body">
-    <mat-chip-list class="mat-chip-list-stacked">
-      <mat-chip class="feature-item" *ngFor="let feature of product.features"
-        [color]="'accent'">{{ feature }}</mat-chip>
-    </mat-chip-list>
+    <div class="list-container">
+      <mat-chip-list class="mat-chip-list-stacked">
+        <mat-chip class="feature-item" *ngFor="let feature of product.features"
+        selected [color]="'primary'">{{ feature }}</mat-chip>
+      </mat-chip-list>
+    </div>
   </div>
   <div class="card-footer">
     <div class="footer-container">
