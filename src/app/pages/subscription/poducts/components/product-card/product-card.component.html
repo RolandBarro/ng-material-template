@@ -12,11 +12,16 @@
     </mat-chip-list>
   </div>
   <div class="card-footer">
-    <div class="plans">
-      <div *ngFor="let plan of product.plans">
-        <div class="currency">$</div>
-        <div class="price">{{ plan.priceCents }}</div>
-        <div class="interval">{{ plan.paymentInterval }}</div>
+    <div class="footer-container">
+      <div class="plans">
+        <div class="plan-container" *ngFor="let plan of product.plans">
+          <div class="currency">$</div>
+          <div class="price">{{ (plan.priceCents / 100) | number:'1.2' }}</div>
+          <div class="interval">{{ plan.paymentInterval || plan.interval }}</div>
+        </div>
+      </div>
+      <div class="action-button">
+        <button mat-raised-button color="accent">Subscribe</button>
       </div>
     </div>
   </div>

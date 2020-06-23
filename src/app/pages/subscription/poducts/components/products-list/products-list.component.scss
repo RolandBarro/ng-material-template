@@ -1,3 +1,6 @@
-.product-list {
-
+@media (min-width: 1200px) {
+  .product-list .cards-container {
+    display: flex;
+    justify-content: space-evenly;
+  }
 }

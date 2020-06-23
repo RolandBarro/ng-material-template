@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { MatBadgeModule } from '@angular/material/badge';
 import { MatButtonModule } from '@angular/material/button';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatDividerModule } from '@angular/material/divider';
@@ -13,6 +14,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   imports: [
     CommonModule,
 
+    MatBadgeModule,
     MatButtonModule,
     MatChipsModule,
     MatDividerModule,
@@ -21,6 +23,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatToolbarModule,
   ],
   exports: [
+    MatBadgeModule,
     MatButtonModule,
     MatChipsModule,
     MatDividerModule,

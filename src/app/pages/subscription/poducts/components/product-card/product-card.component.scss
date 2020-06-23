@@ -16,13 +16,13 @@
     .card-title {
       position: absolute;
       width: 100%;
-      height: 7em;
+      height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
 
       .title {
-        font-size: 3em;
+        font-size: 12vw;
         font-weight: 600;
       }
     }
@@ -38,19 +38,125 @@
 
   .card-body {
     mat-chip.feature-item {
-      text-align: center;
       min-height: fit-content;
+      font-size: 4vw;
     }
   }
 
   .card-footer {
     background-color: #d7d7d7;
+    padding: .7rem;
 
-    .plans {
-      padding: .7rem;
+    .footer-container {
       border: 1px solid #acaaaa45;
-      background-color: #dbdbdb;
+      background-color: #f5f4f4;
       border-radius: .5rem;
+      padding: .7rem;
+      display: flex;
+
+      .plans {
+        padding-right: 10px;
+        min-width: 50%;
+
+        .plan-container {
+          position: relative;
+          margin-bottom: 1rem;
+
+          .currency {
+            position: absolute;
+            top: 0;
+            font-size: 4vw;
+          }
+
+          .price {
+            font-size: 8vw;
+            line-height: 3rem;
+            font-weight: 600;
+            margin-left: 1rem;
+            text-align: right;
+          }
+
+          .interval {
+            position: absolute;
+            right: 0;
+            bottom: -.5rem;
+            font-size: 4vw;
+          }
+        }
+      }
+
+      .action-button {
+        padding-left: 5px;
+        border-left: 1px solid;
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        max-width: 50%;
+
+        button.mat-raised-button {
+          height: 100%;
+          width: 100%;
+          padding: 5px;
+          font-size: 5vw;
+        }
+      }
     }
   }
 }
+
+@media (min-width: 768px) {
+  .card {
+    .card-body mat-chip.feature-item {
+      font-size: 3vw;
+      height: 7vh;
+    }
+
+    .card-footer .footer-container {
+      .plans {
+        padding: 10px;
+
+        .plan-container {
+          .price {
+            line-height: 10vh;
+          }
+
+          .interval {
+            bottom: -1rem;
+            font-size: 3vw;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .card {
+    .card-body mat-chip.feature-item {
+      height: 9vh;
+    }
+
+    .card-footer .footer-container {
+      .plans {
+        padding: 10px;
+        padding-left: 5vw;
+        padding-right: 5vw;
+
+        .plan-container {
+          .price {
+            line-height: 15vh;
+          }
+        }
+      }
+
+      .action-button {
+        padding-left: 2vw;
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+
+}
+

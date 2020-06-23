@@ -1,6 +1,7 @@
 export interface Plan {
   id: string;
-  paymentInterval: string;
+  paymentInterval?: string;
+  interval?: string;
   priceCents: number;
   currency: string;
 }
