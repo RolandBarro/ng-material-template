@@ -13,7 +13,7 @@
       </mat-chip-list>
     </div>
   </div>
-  <div class="card-footer">
+  <div class="card-footer" *ngIf="showFooter">
     <div class="footer-container">
       <div class="plans">
         <div class="plan-container" *ngFor="let plan of product.plans">
@@ -23,7 +23,7 @@
         </div>
       </div>
       <div class="action-button">
-        <button mat-raised-button color="accent">Subscribe</button>
+        <button mat-raised-button color="accent" (click)="onSubscribe(product)">Subscribe</button>
       </div>
     </div>
   </div>

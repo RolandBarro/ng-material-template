@@ -1,0 +1,36 @@
+.subscription-container {
+  color: #000;
+
+  .plan-subscribe-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .action-buttons {
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+
+    .currency {
+      position: relative;
+      text-align: left;
+      font-size: 1.5vw;
+      bottom: -1rem;
+    }
+
+    .price {
+      font-size: 3vw;
+      line-height: 3vh;
+
+      .currency-type {
+        font-size: 1vw;
+      }
+    }
+
+    .interval {
+      text-align: right;
+      position: relative;
+      top: -2vh;
+    }
+  }
+}

@@ -8,12 +8,14 @@ import { ProductsComponent } from './products.component';
 import { ProductsListComponent } from './components/products-list/products-list.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { MaterialModule } from 'src/app/materials/material/material.module';
+import { SubscriptionDialogComponent } from './components/subscription-dialog/subscription-dialog.component';
 
 @NgModule({
   declarations: [
     ProductsComponent,
     ProductCardComponent,
     ProductsListComponent,
+    SubscriptionDialogComponent,
   ],
   imports: [
     CommonModule,

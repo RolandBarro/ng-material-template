@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from 'src/app/models/subscription/product.model';
 
 @Component({
@@ -8,10 +8,15 @@ import { Product } from 'src/app/models/subscription/product.model';
 })
 export class ProductCardComponent implements OnInit {
   @Input() product: Product;
+  @Input() showFooter = true;
+  @Output() subscribe = new EventEmitter<Product>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onSubscribe(product: Product) {
+    this.subscribe.emit(product);
+  }
 }

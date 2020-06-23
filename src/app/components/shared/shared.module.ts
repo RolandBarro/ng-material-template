@@ -4,9 +4,10 @@ import { RouterModule } from '@angular/router';
 
 import { NavbarMainComponent } from './navbar-main/navbar-main.component';
 import { MaterialModule } from 'src/app/materials/material/material.module';
+import { DialogComponent } from './dialog/dialog.component';
 
 @NgModule({
-  declarations: [NavbarMainComponent],
+  declarations: [NavbarMainComponent, DialogComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -15,6 +16,7 @@ import { MaterialModule } from 'src/app/materials/material/material.module';
     MaterialModule,
   ],
   exports: [
+    DialogComponent,
     NavbarMainComponent,
   ]
 })
