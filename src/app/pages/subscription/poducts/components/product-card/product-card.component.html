@@ -1,0 +1,30 @@
+<div class="card" *ngIf="product">
+  <div class="card-header">
+    <div class="card-title">
+      <h1 class="title">{{ product.name }}</h1>
+    </div>
+    <img class="card-banner" src="assets/images/subscription/{{product.name}}.png" alt="{{product.name}}">
+  </div>
+  <div class="card-body">
+    <div class="list-container">
+      <mat-chip-list class="mat-chip-list-stacked">
+        <mat-chip class="feature-item" *ngFor="let feature of product.features"
+        selected [color]="'primary'">{{ feature }}</mat-chip>
+      </mat-chip-list>
+    </div>
+  </div>
+  <div class="card-footer" *ngIf="showFooter">
+    <div class="footer-container">
+      <div class="plans">
+        <div class="plan-container" *ngFor="let plan of product.plans">
+          <div class="currency">$</div>
+          <div class="price">{{ (plan.priceCents / 100) | number:'1.2' }}</div>
+          <div class="interval">{{ plan.paymentInterval || plan.interval }}</div>
+        </div>
+      </div>
+      <div class="action-button">
+        <button mat-raised-button color="accent" (click)="onSubscribe(product)">Subscribe</button>
+      </div>
+    </div>
+  </div>
+</div>

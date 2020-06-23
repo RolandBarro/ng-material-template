@@ -1,0 +1,14 @@
+@media (min-width: 1200px) {
+  .product-list {
+    padding: 2vw;
+    display: inline-flex;
+
+    .cards-container {
+      width: 25%;
+
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+    }
+  }
+}

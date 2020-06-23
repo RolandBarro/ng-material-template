@@ -1,0 +1,5 @@
+<div class="product-list" *ngIf="(productList$ | async) as productList">
+  <div class="cards-container" *ngFor="let product of productList.products">
+    <app-product-card [product]="product" (subscribe)="onSubscribe($event)"></app-product-card>
+  </div>
+</div>

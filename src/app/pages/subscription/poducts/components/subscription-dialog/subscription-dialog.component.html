@@ -1,0 +1,19 @@
+<div class="subscription-container">
+  <div class="plan-container" >
+    <app-product-card [product]="product" [showFooter]="false"></app-product-card>
+  </div>
+  <div class="plan-subscribe-container">
+    <button class="action-buttons" mat-raised-button color="accent" selected
+      *ngFor="let plan of product.plans"
+      (click)="onPlanSelected(plan)">
+      <div class="currency">$</div>
+      <div class="price">
+        <span class="value">{{ (plan.priceCents / 100) | number:'1.2' }}</span>
+        <span class="currency-type"> {{ plan.currency }}</span>
+      </div>
+      <div class="interval">
+        <div>per {{ plan.interval || plan.paymentInterval }}</div>
+      </div>
+    </button>
+  </div>
+</div>

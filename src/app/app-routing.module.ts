@@ -16,7 +16,7 @@ const routes: Routes = [
         loadChildren: () => import('./pages/subscription/subscription.module').then(m => m.SubscriptionModule)
       }
     ]
-  }
+  },
 ];
 
 @NgModule({
