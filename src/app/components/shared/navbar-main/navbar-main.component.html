@@ -1,6 +1,16 @@
 <mat-toolbar color="primary" class="navbar-top fixed mat-elevation-z8">
   <span><mat-icon>map</mat-icon> SendThru</span>
   <div class="spacer"></div>
-  <button class="mr-4" mat-raised-button [routerLink]="['/home']" routerLinkActive="mat-accent">Home</button>
-  <button mat-raised-button [routerLink]="['/subscription']" routerLinkActive="mat-accent">Subscription</button>
+  <div class="large-screen">
+    <button class="mr-4" mat-raised-button [routerLink]="['/home']" routerLinkActive="mat-accent">Home</button>
+    <button mat-raised-button [routerLink]="['/subscription']" routerLinkActive="mat-accent">Subscription</button>
+  </div>
+  <div class="small-screen">
+    <button class="mr-4" mat-raised-button [routerLink]="['/home']" routerLinkActive="mat-accent">
+      <mat-icon>home</mat-icon>
+    </button>
+    <button mat-raised-button [routerLink]="['/subscription']" routerLinkActive="mat-accent">
+      <mat-icon>assignment_turned_in</mat-icon>
+    </button>
+  </div>
  </mat-toolbar>
