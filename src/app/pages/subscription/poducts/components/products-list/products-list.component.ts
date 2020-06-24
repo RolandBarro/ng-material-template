@@ -30,12 +30,16 @@ export class ProductsListComponent implements OnInit {
     console.log('event: ', plan);
 
     const dialogRef = this.dialog.open(SubscriptionDialogComponent, {
-      width: '25%',
-      data: plan
+      data: plan,
+      minWidth: '25%',
+      id: 'subscriptionDialog'
+
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      this.subscriptionResult(result);
+      if (result) {
+        this.subscriptionResult(result);
+      }
     });
   }
 
@@ -43,7 +47,7 @@ export class ProductsListComponent implements OnInit {
     console.log('subscriptionResult: ', result);
 
     this.dialog.open(DialogComponent, {
-      width: '25%',
+      id: 'dialogMessage'
     });
   }
 }

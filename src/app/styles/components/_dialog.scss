@@ -1,0 +1,29 @@
+mat-dialog-container {
+  &#subscriptionDialog {
+    margin: 0 auto;
+    max-height: 100vh;
+  }
+
+  &#dialogMessage {
+    margin: 0 auto;
+    width: 80vw;
+  }
+}
+
+@media (min-width: 768px) {
+  mat-dialog-container {
+    &#dialogMessage {
+      margin: 0 auto;
+      width: 50vw;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  mat-dialog-container {
+    &#dialogMessage {
+      margin: 0 auto;
+      width: 35vw;
+    }
+  }
+}
