@@ -2,23 +2,24 @@
   background: url(~/assets/images/banner-bg.jpg);
   background-size: cover;
 
-  .container {
+  .content-container {
     height: 100vh;
     display: flex;
     align-items: center;
   }
 
   h1 {
-    font-size: 4rem;
-    line-height: 4.5rem;
+    font-size: 15vw;
+    line-height: 15vw;
+    text-align: center;
   }
 
   .typewriter {
-    text-align: right;
+    text-align: center;
 
     .text {
-      font-size: 3rem;
-      line-height: 3.1rem;
+      font-size: 10vw;
+      line-height: 10vw;
     }
   }
 
@@ -44,5 +45,26 @@
     from, to { border-color: transparent }
     10% { border-color: orange; }
   }
-
 }
+
+@media (min-width: 768px) {
+  .banner-container {
+    .content-container {
+      padding: 10vw;
+    }
+
+    h1 {
+      font-size: 7vw;
+      line-height: 7vw;
+      text-align: left;
+    }
+
+    .typewriter {
+      .text {
+        font-size: 7vw;
+        line-height: 7vw;
+      }
+    }
+  }
+}
+
