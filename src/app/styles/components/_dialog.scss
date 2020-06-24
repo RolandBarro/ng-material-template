@@ -12,6 +12,10 @@ mat-dialog-container {
 
 @media (min-width: 768px) {
   mat-dialog-container {
+    &#subscriptionDialog {
+      width: 70vw;
+    }
+
     &#dialogMessage {
       margin: 0 auto;
       width: 50vw;
@@ -21,6 +25,10 @@ mat-dialog-container {
 
 @media (min-width: 1200px) {
   mat-dialog-container {
+    &#subscriptionDialog {
+      width: 30vw;
+    }
+
     &#dialogMessage {
       margin: 0 auto;
       width: 35vw;
